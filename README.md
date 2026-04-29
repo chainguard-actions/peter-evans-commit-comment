@@ -1,5 +1,7 @@
 # peter-evans/commit-comment
 
+A GitHub action to create a comment for a commit on GitHub
+
 Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/peter-evans/commit-comment](https://github.com/peter-evans/commit-comment).
 
 ## Versions
