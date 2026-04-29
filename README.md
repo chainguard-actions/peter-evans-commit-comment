@@ -1,6 +1,12 @@
 # peter-evans/commit-comment
 
-Hardened GitHub Action by [Chainguard](https://www.chainguard.dev).
+Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at [https://github.com/peter-evans/commit-comment](https://github.com/peter-evans/commit-comment).
+
+## Versions
+
+| Version | Tag | Upstream commit |
+|---------|-----|-----------------|
+| v4.0.0 | [`v4.0.0`](https://github.com/chainguard-actions/commit-comment/tree/v4.0.0) | — |
 
 ## Privacy
 
