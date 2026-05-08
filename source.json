@@ -1,4 +1,6 @@
 {
-  "upstream": "peter-evans/commit-comment",
-  "version": "v4.0.0"
+  "owner": "peter-evans",
+  "repo": "commit-comment",
+  "version": "",
+  "url": "https://github.com/peter-evans/commit-comment"
 }

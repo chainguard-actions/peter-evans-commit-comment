@@ -2,5 +2,6 @@
   "owner": "peter-evans",
   "name": "commit-comment",
   "visibility": "internal",
-  "description": "A GitHub action to create a comment for a commit on GitHub"
+  "description": "A GitHub action to create a comment for a commit on GitHub",
+  "block_publish": false
 }
