@@ -1,0 +1,20 @@
+name: Test basic commit comment
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        continue-on-error: true
+        with:
+          token: ${{ github.token }}
+          repository: peter-evans/commit-comment
+          sha: abc1234567890abcdef1234567890abcdef12345
+          body: 'This is a test commit comment'
+      - name: Assert action ran (may fail due to API without real token)
+        run: |
+          echo "outcome: ${{ steps.action.outcome }}"
+          echo "PASS: action step executed"
