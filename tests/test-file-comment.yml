@@ -1,4 +1,4 @@
-name: Test commit comment with body-path
+name: Test file comment (path and position inputs)
 on:
   workflow_dispatch:
 jobs:
@@ -6,10 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - name: Create comment body file
-        run: |
-          echo "This is a test comment from a file." > /tmp/comment-body.txt
 
       - name: Get current commit SHA
         id: sha
@@ -20,9 +16,11 @@ jobs:
         continue-on-error: true
         with:
           sha: ${{ steps.sha.outputs.sha }}
-          body-path: /tmp/comment-body.txt
+          body: "Comment on a specific file line"
+          path: "action.yml"
+          position: "1"
 
-      - name: Assert action ran (success or graceful failure on sentinel repo)
+      - name: Assert action ran (path and position inputs exercised, sentinel repo causes graceful failure)
         env:
           OUTCOME: ${{ steps.action.outcome }}
           COMMENT_ID: ${{ steps.action.outputs.comment-id }}
@@ -34,7 +32,7 @@ jobs:
               echo "FAIL: action succeeded but comment-id output is empty"
               exit 1
             fi
-            echo "PASS: comment created with id '$COMMENT_ID'"
+            echo "PASS: got comment-id '$COMMENT_ID'"
           elif [ "$OUTCOME" = "failure" ]; then
             echo "PASS: action failed gracefully (sentinel repo is not resolvable)"
           else
